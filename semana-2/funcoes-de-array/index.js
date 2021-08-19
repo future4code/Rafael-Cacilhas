@@ -27,6 +27,14 @@ nome: "Laís Petra", apelido: "Laura"
 
 // Exercício 1
 
+
+
+
+
+
+
+
+
 const pets = [
     { nome: "Lupin", raca: "Salsicha"},
     { nome: "Polly", raca: "Lhasa Apso"},
@@ -35,6 +43,10 @@ const pets = [
     { nome: "Fluffy", raca: "Poodle"},
     { nome: "Caramelo", raca: "Vira-lata"},
  ]
+
+
+
+
 
  // a)
 
@@ -75,8 +87,15 @@ let poodles = pets
 
 //console.log(poodles)
 
+function extrairNome(obj){
+    return obj.nome
+  }  
 
+  const enviarMsgPoodles = pets.map((item, index, array) => {
+    return item.raca === "Poodle"
+  })
 
+  //console.log(enviarMsgPoodles)
 
 
 //Exercício 2
