@@ -1,0 +1,84 @@
+div {
+    background-color: rgb(255, 255, 255);
+}
+
+p {
+    color: rgb(219, 73, 73);
+}
+
+label{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+
+th{
+    border: 0.05cm solid black;
+}
+
+td{
+    border: 0.01cm solid black;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+#social-media {
+    color: blue;
+
+}
+
+
+
+#produto1 {
+    color:rgb(0, 0, 0);
+    display: inline;
+    margin-right: 57px;
+
+}
+
+#produto2 {
+    color:rgb(0, 0, 0);
+    display: inline;
+    margin-right: 11px;
+    
+
+}
+
+#produto3 {
+    color:rgb(0, 0, 0);
+    display: inline;
+    margin-right: 55px;
+
+}
+
+#produto4 {
+    color:rgb(0, 0, 0);
+    display: inline;
+    margin-right: 4px;
+
+}
+
+.texto {
+    color: rgb(31, 189, 44)
+}
+
+.link {
+    color: rgb(0,0,0);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 50px;
+}
+
+.centro{
+    text-align: center;
+}
+
+.botao{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+.form-add{
+    margin-left: 150px;
+}
