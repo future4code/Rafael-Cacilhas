@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: lightgray;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px
+}
+
+main{
+    background-color: lightyellow;
+    height: 85vh;
+    flex-grow: 1;
+    display: flex;
+
+}
+
+img {
+    width: 100px;
+}
+
+footer{
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo{
+    display:flex;
+    flex-direction: column;
+
+    
+}
+
+nav{
+    background-color: lightpink;
+    width: 300px;
+}
+
+section{
+    background-color: lightseagreen;
+    width: 300px;
+}

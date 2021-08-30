@@ -1,0 +1,102 @@
+
+
+header{
+    background-color: mediumvioletred;
+    grid-column: 1/ -1 ;
+
+    align-items: center;
+    font-weight: bold;
+
+    display:flex;
+    justify-content: space-between;
+}
+
+.menu{
+    background-color: #f2d0e0;
+}
+
+main{
+height: 92vh;
+display: grid;
+
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+
+
+}
+
+footer{
+    background-color: mediumvioletred;
+    grid-column: 1/-1;
+
+
+
+}
+
+#foot{
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+
+    }
+
+.container-grid{
+    display: grid;
+
+    grid-template-columns: 200px 1fr ;
+    grid-template-rows: 35px 1fr 35px;
+
+    justify-content: center;
+
+}
+
+.flex-menu{
+    display:flex;
+    justify-content: space-between;
+
+    
+}
+
+.foto-produto{
+    width: 200px;
+}
+
+
+.produto {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 darkgray;
+    transition: 0.3s;
+    margin: 10px 5px;
+    
+    width: 200px;
+    align-items: center;
+    justify-self: center;
+
+  }
+
+  .produto:hover {
+    box-shadow: 0 8px 16px 0 rgb(114, 113, 113);
+  }
+
+.button{
+    margin-right: 15px;
+}
+
+.descricao{
+   text-align: center;
+}
+
+.titulo{
+    font-weight: bold;
+    text-align: center;
+}
+
+.img{
+    height: 15px;
+    align-items: center;
+}
+
+#cab{
+    margin-left: 15px;
+}
+

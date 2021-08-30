@@ -1,0 +1,30 @@
+.grid-container{
+    background-color: lightskyblue;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 4px;
+    column-gap: 3px;
+
+    
+
+
+
+}
+
+.item{
+    background-color: lightpink;
+    border: 1px solid gray;
+}
+
+.item1{
+    grid-row: 3/5;
+    grid-column: 2/5;
+    background-color: palevioletred;
+}
+
+.item2{
+    grid-row: 1 /span 2;
+    background-color: indigo;
+}
