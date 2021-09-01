@@ -1,0 +1,55 @@
+#texto-fonte-root{
+    font-size:      3rem;
+
+}
+
+#texto-padding-vertical{
+    padding:        2em 0;
+}
+
+#altura-porcentagem-comprimento{
+    height:         20vh;
+}
+
+#comprimento-metade-altura{
+    height:         50vh;
+}
+
+.container{
+    border:         1px solid black;
+    width:          400px;
+    height:         400px;
+    font-size:      20px;
+    background-color: blueviolet;
+}
+
+
+#fonte-setenta{
+    font-size:      70%;
+
+}
+
+#comprimento-pai{
+    width:          10%;
+
+}
+
+#altura-pai{
+    height:         10%;
+}
+
+
+@media screen and (min-device-width : 320 px) and (max-device-width: 480px) {
+
+.container{
+    background-color: aqua;
+}
+
+
+}
+
+@media screen and (min-device-width : 481 px) and (max-device-width: 800px) {
+    .container{
+        background-color: aqua;
+    }
+}
