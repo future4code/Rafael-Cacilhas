@@ -6,7 +6,7 @@ const IconContainer = styled.div`
 `
 const IconImage = styled.img`
 	margin-right: 5px;
-	height: 4vw;
+	height: 3vh;
 `
 
 export function IconeSemContador(props) {
