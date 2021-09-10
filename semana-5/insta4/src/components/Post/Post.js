@@ -63,18 +63,23 @@ class Post extends React.Component {
 
   onClickCurtida = () => {
 
-    if( this.state.curtido == false) {
-      this.setState({
-      curtido: true,
-      numeroCurtidas: this.state.numeroCurtidas +1
-      })
-    }
-    if( this.state.curtido == true) {
+    if(this.state.curtido == false) {
 
       this.setState({
-      curtido: false,
-      numeroCurtidas: this.state.numeroCurtidas -1
+        curtido: true,
+        numeroCurtidas: this.state.numeroCurtidas + 1
       })
+
+    }
+
+    else if(this.state.curtido == true ){
+
+
+      this.setState({
+        curtido: false,
+        numeroCurtidas: this.state.numeroCurtidas -1
+      })
+
     }
 
   }
@@ -113,7 +118,8 @@ class Post extends React.Component {
 
   render() {
     let iconeCurtida
-    let iconeB 
+
+
 
     if(this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
@@ -121,6 +127,13 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
+
+    
+
+
+
+
+    let iconeB 
     if(this.state.bookmark) {
       iconeB = iconeBookmarkPreto
     } else {
