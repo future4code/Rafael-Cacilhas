@@ -1,0 +1,25 @@
+@keyframes blink{
+    0% {
+        background: violet;
+        position:   relative;
+        top:        0;
+        left:       0;
+    }
+
+    100% {
+        background: navy;
+        position: relative;
+        top:    50%;
+        left:   50%;
+    }
+
+}
+
+
+
+div{
+    height:     400px;
+    width:      400px;
+    border:     1px solid black;
+    animation: blink 5s infinite;
+}

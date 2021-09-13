@@ -1,0 +1,139 @@
+*{
+    margin:                     0;
+    padding:                    0;
+}
+
+body{
+    display:                grid;
+    grid-template-columns:  30vw 70vw;
+    grid-template-rows:     10vh 80vh 10vh;
+}
+
+header{
+    border:                 1px solid ;
+
+    width:                  99vw;
+    
+    grid-column:            1/-1;
+    text-align:             center;
+
+    display:                flex;
+    justify-content:        space-between;
+    align-items:          center;
+}
+
+
+
+nav{
+    border:                 1px solid blue;
+    text-align:             center;
+
+    width:                  30vw;
+
+    
+}
+
+main{
+    border:                 1px solid red;
+
+    height:                 78vh;
+    width:                  66vw;
+
+    margin-top:             1vh;       
+    margin-left:            3vw; 
+
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-rows:     1fr 1fr 1fr 1fr;
+}
+
+
+
+footer{
+    border:                 1px solid black;
+
+    width:                  99vw;
+
+    grid-column:            1/-1;
+    text-align:             center;
+
+}
+
+.thumbnail{
+    width:                  auto;
+    height:                 12vh;
+}
+
+
+.pagina-video{
+    display:                flex;
+    flex-direction:         column;
+
+    align-items:            center;
+    justify-items:          center;
+}
+
+#main-video{
+    border:                 1px solid purple;
+    margin-left:            10vw;
+    margin-top:             5vh;
+
+    width:                  50vw;
+    height:                 auto;         
+}
+
+
+#search-bar{
+    margin-right:           2vw;
+}
+
+#titulo-video{
+    border:                 1px solid gold;
+    margin-top:             5vh; 
+    margin-left:            10vw;
+    font-size:              large;
+    font-style:             bold;
+    
+}
+
+.titulo-main{
+    margin-left:            5vw;
+}
+
+#descricao-video{
+    border:                 1px solid silver;
+    margin-left:            10vw;
+    margin-top:             5vh;
+
+}
+
+#logo{
+    color:                  crimson;
+    margin-left:            10px;
+
+}
+
+
+@media screen and (max-device-width: 800px) {
+
+    main{
+        border:                 1px solid green;
+        margin-top:             1vh;       
+        margin-left:            3vw;            
+        display:                grid;
+        grid-template-columns:  1fr 1fr;
+        grid-template-rows:     1fr 1fr 1fr 1fr;
+    }
+
+    .titulo-main{
+        margin-left:            5vw;
+    }
+
+    .thumbnail{
+        width:                  auto;
+        height:                 8vh;
+    }
+    
+}
+    
+    
