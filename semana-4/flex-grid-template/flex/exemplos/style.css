@@ -1,0 +1,26 @@
+.flex-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+
+    background-color: antiquewhite;
+    height: 200px;
+
+}
+
+.item{
+    background-color: lightcoral;
+    border: 1px solid grey;
+    padding: 24px;
+
+}
+
+.item1{
+    flex-grow: 2;
+}
+
+.item2{
+    flex-grow: 1;
+    align-self: flex-end;
+}
