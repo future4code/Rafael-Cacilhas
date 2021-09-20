@@ -1,0 +1,43 @@
+*{
+  background-color:  rgb(48, 46, 46);
+}
+
+.App {
+  text-align: center;
+  border: 1px solid black;
+  height: 60vh;
+  width: 30vw;
+  margin: 10%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.user{
+  border: 1px solid green;
+  height: 10vh;
+
+}
+
+.balao{
+  border: 1px solid blue;
+  width: 14vw;
+  height: 10vh;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+}
+
+
+.balaoUser{
+  border: 1px solid gray;
+  width: 14vw;
+  height: 10vh;
+  margin-left: 51%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 1%;
+}
+
+
