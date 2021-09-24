@@ -52,7 +52,6 @@ class App extends React.Component {
 
   criaTarefa = () => {
 
-    console.log(event.target.inputValue)
 
     let temp =
     {
