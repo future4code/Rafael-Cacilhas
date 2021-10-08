@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 
 import Matches from "./Components/matches"
 import Navegar from "./Components/navegar"
@@ -24,7 +26,8 @@ align-items:      center;
 
 function App() {
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(1);
+
 
   
   const paginaAtual = () => {
@@ -34,6 +37,22 @@ function App() {
     else if(value ===1 ){
       return <Navegar />
     }
+  }
+
+  const limparPagina = () => {
+    const URL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rafael-cacilhas-maryam/clear"
+    const header = "Content-Type: application/json"
+
+    axios.put(URL,header)
+        .then(  (res) => {
+            console.log(res.data)  //trocar por um alert
+        }    )
+        .catch( (err) => {
+            console.log(err)
+        }     )
+  
+
+
   }
 
 
@@ -56,7 +75,7 @@ function App() {
         
       </BottomNavigation>
 
-      <Button variant="outlined" startIcon={<RestoreIcon />}>
+      <Button variant="outlined" startIcon={<RestoreIcon />} onClick={() => {limparPagina()}} >
         Limpar
       </Button>
 

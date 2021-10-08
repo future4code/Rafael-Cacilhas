@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -81,7 +81,7 @@ display:            inline;
 const Idade = styled.h3`
 display:            inline;
 `
-const Descrição = styled.body`
+const Descrição = styled.p`
 display:            block;
 `
 
@@ -90,11 +90,12 @@ display:            block;
 
 const Navegar = () => {
 
-    const [nome, setNome]   = React.useState("");
-    const [idade,setIdade]  = React.useState("");
-    const [foto, setFoto]   = React.useState("");
-    const [desc, setDesc]   = React.useState("");
-    const [id,   setID]     = React.useState("");
+    const [nome, setNome]       = useState("");
+    const [idade,setIdade]      = useState("");
+    const [foto, setFoto]       = useState("");
+    const [desc, setDesc]       = useState("");
+    const [id,   setID]         = useState("");
+
 
 
 
@@ -117,36 +118,27 @@ const Navegar = () => {
 
 
     
-    const verificaMatch = (id,escolha) => {
+    const verificaMatch = (escolhaUser) => {
 
-        console.log(id,escolha)
 
         const URL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/rafael-cacilhas-maryam/choose-person";
         const header = "Content-Type: application/json"
         const body = {
-            "id": "Cl3gXDxcQZkty8aoatXm",
-            "choice": true
+            "id": id,
+            "choice": escolhaUser
         }
-
         axios.post(URL,body,header)
         .then(  (res) => {
-            console.log(res.data.isMatch)
-
-            if(escolha === true && res.data.isMatch === true) {
-                console.log("Match")
-            }
-
-            if(escolha === true && res.data.isMatch === false) {
-                console.log("Você é feio")
-            }
-
-
-
+            console.log(escolhaUser, res.data.isMatch)
         }    )
         .catch( (err) => {
             console.log(err)
         }     )
 
+
+
+        pegaPerfil()
+        
 
     }
 
@@ -155,16 +147,9 @@ const Navegar = () => {
 
 
 
-
-
-
     useEffect( () => {
         pegaPerfil()
-        verificaMatch( {id} ,true)
-
-    }, [])
-
-
+    }, [ ])
 
 
     return(
@@ -172,13 +157,13 @@ const Navegar = () => {
         <Container>
 
             <Card>
-                <ContainerHeader>       <h3>Header</h3>                                         </ContainerHeader>
-                <ContainerFoto>         <Foto src={foto} alt="Foto"/>                           </ContainerFoto>
-                <ContainerNome>         <Titulo>  {nome},   </Titulo> <Idade>{idade}</Idade>    </ContainerNome>
-                <ContainerDescrição>       <Descrição>  {desc}   </Descrição>       <Descrição>  {id}   </Descrição>                             </ContainerDescrição>
+                <ContainerHeader>       <h3>Header</h3>                                             </ContainerHeader>
+                <ContainerFoto>         <Foto src={foto} alt="Foto"/>                               </ContainerFoto>
+                <ContainerNome>         <Titulo>     {nome},   </Titulo> <Idade>{idade}</Idade>     </ContainerNome>
+                <ContainerDescrição>    <Descrição>  {desc}    </Descrição>                         </ContainerDescrição>
                 <ContainerBotoes>
-                    <Button variant="outlined" startIcon={<CancelIcon />}   />
-                    <Button variant="outlined" startIcon={<FavoriteIcon />} />
+                    <Button variant="outlined" startIcon={<CancelIcon />}   onClick={() => {verificaMatch(false)    }} />
+                    <Button variant="outlined" startIcon={<FavoriteIcon />} onClick={() => {verificaMatch(true)     }} />
                 </ContainerBotoes>
             </Card>
 
