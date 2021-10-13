@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useTheme } from "@material-ui/core/styles";
+
+
+
 
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -9,11 +14,23 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 
 
-const Container = styled.div`
-display:          flex;
-flex-direction:   column;
-align-items:      center;
-`
+
+
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#b71c1c',
+        },
+        secondary: {
+            main: '#1a237e',
+            contrastText: '#ffcc00',
+        },
+        contrastThreshold: 3,
+        tonalOffset: 0.2,
+    },
+});
+
 
 
 const Card = styled.div`
@@ -26,12 +43,6 @@ width:            70vw;
 height:           60vh;
 `
 
-const ContainerHeader = styled.div`
-border: 1px solid blue;
-width:              65vw;
-height:             5vh;
-
-`
 
 
 const ContainerFoto = styled.div`
@@ -89,6 +100,8 @@ display:            block;
 
 
 const Navegar = () => {
+    const theme = useTheme();
+
 
     const [nome, setNome]       = useState("");
     const [idade,setIdade]      = useState("");
@@ -154,11 +167,13 @@ const Navegar = () => {
 
     return(
             
-        <Container>
 
             <Card>
-                <ContainerHeader>       <h3>Header</h3>                                             </ContainerHeader>
-                <ContainerFoto>         <Foto src={foto} alt="Foto"/>                               </ContainerFoto>
+
+
+
+
+                <ContainerFoto>         <Foto src={foto} alt={nome}/>                               </ContainerFoto>
                 <ContainerNome>         <Titulo>     {nome},   </Titulo> <Idade>{idade}</Idade>     </ContainerNome>
                 <ContainerDescrição>    <Descrição>  {desc}    </Descrição>                         </ContainerDescrição>
                 <ContainerBotoes>
@@ -166,8 +181,8 @@ const Navegar = () => {
                     <Button variant="outlined" startIcon={<FavoriteIcon />} onClick={() => {verificaMatch(true)     }} />
                 </ContainerBotoes>
             </Card>
+            
 
-        </Container>            
             
     )
 }

@@ -2,6 +2,8 @@ import React, {useState,useEffect} from "react";
 import styled from "styled-components";
 import axios from "axios";
 import ListaMatch from "./listamatch";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 
 const Container = styled.div`
@@ -19,14 +21,6 @@ justify-content:  top;
 width:            70vw;
 height:           60vh;
 `
-
-const ContainerHeader = styled.div`
-border:             1px solid blue;
-width:              65vw;
-height:             5vh;
-margin-bottom:      1%;
-`
-
 
 
 
@@ -69,17 +63,10 @@ const Matches = () => {
             
 
 
-        <Container>
-
             <Card>
-                <ContainerHeader>       <h3>Aphrodite</h3>          </ContainerHeader>                                   
-                
                 {renderizaMatches}
-
-
             </Card>
 
-        </Container>            
             
 
     )

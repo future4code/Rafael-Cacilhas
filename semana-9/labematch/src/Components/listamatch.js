@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Avatar from '@mui/material/Avatar';
+
 
 
 const ContainerMatch = styled.div`
@@ -7,7 +9,7 @@ border:             1px solid purple;
 width:              65vw;
 height:             5vh;
 display:            flex;
-margin:             1%;
+margin:             3%;
 `
 
 
@@ -24,13 +26,12 @@ const ContainerNome = styled.div`
 border:             1px solid blue;
 width:              60vw;
 height:             5vh;
+display:            flex;
+align-items:        center;
 `
 
-
-const Foto = styled.img`
-margin-top:         2px;
-max-width:          8vw;
-max-height:         5vh;
+const Texto = styled.h4`
+margin-left:        5%;
 `
 
 
@@ -41,11 +42,11 @@ const ListaMatch = (props) =>{
         <ContainerMatch>
 
             <ContainerFoto> 
-                <Foto src={props.photo} />
+                <Avatar alt={props.name} src={props.photo}  sx={{ width: 48, height: 48 }} />
             </ContainerFoto>
 
             <ContainerNome>
-                {props.name}
+                <Texto> {props.name} </Texto>
             </ContainerNome>    
                 
         </ContainerMatch>
