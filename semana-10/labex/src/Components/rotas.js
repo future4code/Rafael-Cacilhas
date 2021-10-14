@@ -7,6 +7,7 @@ import Footer from "./footer";
 import AdminHomePage        from "./Paginas/AdminHomePage";
 import HomePage             from "./Paginas/HomePage";
 import ListTripsPage        from "./Paginas/ListTripsPage";
+import Login                from "./Paginas/Login"
 
 /*
 import ApplicationFormPage  from "./Paginas/ApplicationFormPage";
@@ -31,6 +32,11 @@ export default function Rotas() {
 
                 <Route exact path={"/viagens"}>
                     <ListTripsPage />
+                </Route>
+
+                
+                <Route exact path={"/login"}>
+                    <Login />
                 </Route>
 
 

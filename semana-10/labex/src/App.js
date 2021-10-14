@@ -23,7 +23,18 @@ const theme = createTheme({
       '@media (max-width:800px)': {
         fontSize: '6rem',
       },
+    },
 
+    h2: {
+      color:'#202363', 
+      fontWeight: 500,
+      fontSize: '3rem',
+      '@media (min-width:800px)': {
+        fontSize: '3rem',
+      },
+      '@media (max-width:800px)': {
+        fontSize: '3rem',
+      },
     },
 
     h6: {
