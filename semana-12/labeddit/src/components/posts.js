@@ -22,57 +22,108 @@ const Posts = (props) => {
     let     nComent   = useComent(props.id)
     nComent?    nComent = nComent.length    :   nComent=0
 
-    const [votoUser,setVoto]    = useState(props.votoUser?  1:0)
+    const [votoUser,setVoto]    = useState(props.votoUser?  props.votoUser:0)
     const [votoTotal,setTotal]  = useState(props.votoTotal? Number(props.votoTotal):0 )
 
 
 
     const   likePost = (id) => {
 
-
+    if(props.titulo !== false) {
+        
         if(votoUser === 1){
             setVoto(0)
-            descurtir(id)
+            descurtir(id,true)
             setTotal(votoTotal - 1)
         }
 
         if(votoUser=== 0){
             setVoto(1)
-            curtir(id)
+            curtir(id,true)
             setTotal(votoTotal + 1)
         }
 
         if(votoUser===-1){
             setVoto(1)
-            curtir(id)
-            curtir(id)
+            curtir(id,true)
+            curtir(id,true)
             setTotal(votoTotal +2)
         }
+    } else {
+
+        if(votoUser === 1){
+            setVoto(0)
+            descurtir(id,false)
+        }
+
+        if(votoUser=== 0){
+            setVoto(1)
+            curtir(id,false)
+            setTotal(votoTotal + 1)
+        }
+
+        if(votoUser===-1){
+            setVoto(1)
+            curtir(id,false)
+            curtir(id,false)
+            setTotal(votoTotal +2)
+        }
+
+    }
 
     }
 
 
     const   dislikePost = (id) => {
             
+
+    if(props.titulo !== false) {
+    
         if(votoUser ===1){
             setVoto(-1)
-            descurtir(id)
-            descurtir(id)
+            descurtir(id,true)
+            descurtir(id,true)
             setTotal(votoTotal - 2)
 
         }
         if(votoUser===0){
             setVoto(-1)
-            descurtir(id)
+            descurtir(id,true)
             setTotal(votoTotal - 1)
 
         }
         if(votoUser===-1){
             setVoto(0)
-            curtir(id)
+            curtir(id,true)
             setTotal(votoTotal + 1)
 
         }
+    }else {
+
+        if(votoUser === 1){
+            setVoto(-1)
+            descurtir(id,false)
+            descurtir(id,false)
+            setTotal(votoTotal - 2)
+        }
+
+        if(votoUser=== 0){
+            setVoto(-1)
+            descurtir(id,false)
+            setTotal(votoTotal - 1)
+        }
+
+        if(votoUser===-1){
+            setVoto(0)
+            curtir(id,false)
+            setTotal(votoTotal +1)
+        }
+
+    }
+
+
+
+
     }
 
 
@@ -85,7 +136,7 @@ const Posts = (props) => {
     >
         <CardContent>
             <Typography variant="h5" component="div">
-                {props.titulo}
+                {props.titulo? props.titulo:''}
             </Typography>
 
             <Typography variant="body1">
@@ -101,7 +152,7 @@ const Posts = (props) => {
                 height:         '4vh',
         }} >
 
-<Box sx={{position: 'inherit',  height: '4vh', display:'flex',alignItens:'center',justifyContent:'center',marginRight:'-5vw',marginLeft:'-10px'}}>
+            <Box sx={{position: 'inherit',  height: '4vh', display:'flex',alignItens:'center',justifyContent:'center',marginRight:'-5vw',marginLeft:'-10px'}}>
                 
                 <CardActions>
 

@@ -24,7 +24,7 @@ lista? comentarios = lista.map(  (item)  =>{
                 key       ={item.id} 
                 id        ={item.id} 
                 corpo     ={item.body} 
-                titulo    ={''} 
+                titulo    ={false} 
                 usuario   ={item.username}
                 votoTotal ={item.voteSum}
                 votoUser  ={item.userVote}

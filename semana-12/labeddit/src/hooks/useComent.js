@@ -5,11 +5,9 @@ import {useEffect}       from 'react';
 
 
 
-
 const useComent = (props) => {
 
     const [comentarios,setComent] = useState()
-
 
     useEffect(  ()  =>  {
 
@@ -26,7 +24,6 @@ const useComent = (props) => {
         setComent( res.data)
     })
     .catch( (erro) => {
-        console.log(erro.response)
     })
 
     },[props])
