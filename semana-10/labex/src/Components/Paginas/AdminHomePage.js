@@ -1,18 +1,14 @@
 
-import React, {useEffect, useState} from "react";
-import {useHistory} from 'react-router-dom';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
+import React, {useEffect}   from "react";
+import {useHistory}         from 'react-router-dom';
+import Box                  from '@mui/material/Box';
+import Typography           from '@mui/material/Typography';
+import Button               from '@mui/material/Button';
 
-import TripDetailsPage from "./TripDetailsPage"
+import CreateTripPage from "./CreateTripPage"
 
 export default function AdminHomePage() {
 
-    const [pag,setPag] = useState("nada")
 
 
     const history = useHistory()
@@ -26,9 +22,6 @@ export default function AdminHomePage() {
     }, [history])
 
 
-    const renderizaPagina = () => {
-        return <TripDetailsPage />
-    }
 
 return (
 
@@ -60,14 +53,12 @@ return (
         </Box>
 
 
-        <Box sx={{ height: 400, marginTop: 10  }}>
-            <h2>quede a pag?</h2>
-            {renderizaPagina}
+        <Box sx={{ height: 800, marginTop: 10  }}>
+            <CreateTripPage />
         </Box>
 
 
 
 
-    </Box>
-    )
+    </Box>    )
 }

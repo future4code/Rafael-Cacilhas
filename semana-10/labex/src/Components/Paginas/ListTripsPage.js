@@ -1,23 +1,42 @@
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 
-import TripDetailsPage      from "./TripDetailsPage";
-
-
-import Grid from '@mui/material/Grid';
-import Skeleton from '@mui/material/Skeleton';
-import Button from '@mui/material/Button';
 
 
 
 
 export default function ListTripsPage() {
 
+    const [viagens, setViagens] =   useState([])
+
+    const pegaViagens = () => {
+        const URL = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/rafael-cacilhas-maryam/trips'
+    
+        axios.get(URL)
+        .then(  (resposta) => {
+            setViagens(resposta.data.trips)
+        }).catch(   (erro) => {
+            console.log(erro)
+        })
+
+
+    }
+
+
+    const renderizaViagens = () => {
+        console.log(viagens[0])
+    }
+
+    useEffect( () => {
+        pegaViagens()
+    }, [])
+
     return (
-        
 
         <Box 
         sx={ { 
@@ -44,7 +63,7 @@ export default function ListTripsPage() {
             <Box sx={{ height: 150  }}>
             </Box>        
 
-            <Box sx={{ marginLeft: -20  }}>
+            <Box sx={{ marginLeft: 0  }}>
                 <Typography  variant="h2" component="div" >
                     Recomendações
                 </Typography>
@@ -62,13 +81,16 @@ export default function ListTripsPage() {
                         />
                     </CardActionArea>
                 </Card>
+
+                {renderizaViagens()}
     
                 <Typography gutterBottom variant="h6" component="div">
-                            Viagem 1
+                    Viagem 1
                 </Typography>
+
                 <Box sx={{ marginTop: -2  }}>
                     <Typography variant="body" >
-                                R$ 120,00
+                        R$ 120,00
                     </Typography>
                 </Box>
             </Box> 
