@@ -48,7 +48,10 @@ lista? comentarios = lista.map(  (item)  =>{
         <Typography color = "textPrimary" variant="h3"> Comentários</Typography>
 
         <Box sx={{marginBottom: '2vh'}}>
-            <Mensagens titulo={false}  id={params.id} />
+            <Mensagens 
+                titulo={false}  
+                id={params.id} 
+            />
         </Box>
 
         <Typography variant="h4"> {comentarios}</Typography>

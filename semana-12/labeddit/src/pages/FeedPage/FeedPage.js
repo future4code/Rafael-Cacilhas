@@ -25,6 +25,8 @@ const Feed = () => {
               usuario   = {item.username}
               votoTotal = {item.voteSum}
               votoUser  = {item.userVote}
+              votoUser  = {item.userVote}
+              numeroC   = {item.commentCount}
             />
   }) : postagens = []
 
@@ -43,6 +45,8 @@ const Feed = () => {
         width:          '100%',
         minHeight:      '100vh',
       }}> 
+
+      
 
         <Typography color = "textPrimary" variant="h3"> Feed</Typography>
 

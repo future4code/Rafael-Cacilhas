@@ -1,6 +1,10 @@
 import React            from "react";
-import Box              from '@mui/material/Box';
 import CadastroForm     from './CadastroForm';
+
+import Typography       from '@mui/material/Typography';
+import Box              from '@mui/material/Box';
+
+
 
 
 
@@ -21,9 +25,26 @@ const Cadastro = ({textoBotao, setTexto}) => {
     }}>
 
 
-      <h1> Cadastro</h1>
+<Typography  color = "textPrimary" variant="h3"> Cadastro </Typography>
 
-      <CadastroForm textoBotao={textoBotao} setTexto={setTexto} />
+        <Box 
+      sx={{
+        border:         '1px solid black',
+        marginTop:      '2vh',
+        display:        'flex',
+        flexDirection:  'column',
+        height:         '40vh',
+        width:          '80vw',
+        maxWidth:       '750px',
+        justifyContent: 'center',
+        alignItems:     'center',
+        backgroundColor: 'white'
+        }}
+      >
+
+        <CadastroForm textoBotao={textoBotao} setTexto={setTexto} />
+      </Box>
+
 
     </Box>
   );

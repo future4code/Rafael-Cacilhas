@@ -14,7 +14,7 @@ const theme = createTheme({
     palette: {
         type: 'dark',
         background: {
-            default:    backgroundLighter,
+            default:    backgroundDark,
             dark:       backgroundDark,
         },
         primary: {
@@ -33,7 +33,7 @@ const theme = createTheme({
         },
 
         text: {
-            primary: backgroundDark
+            primary: primaryColor
         }
     }
 

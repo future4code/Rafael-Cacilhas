@@ -1,6 +1,8 @@
 import React            from "react";
 import Box              from '@mui/material/Box';
 import Button           from '@mui/material/Button';
+import Typography       from '@mui/material/Typography';
+
 
 import {gotoCadastro}       from '../../router/coordinator';
 import {useHistory}         from 'react-router-dom';
@@ -21,6 +23,7 @@ const history = useHistory()
     <Box 
     sx={{
       display:        'flex',
+      marginTop:      '3vh',
       flexDirection:  'column',
       alignItems:     'center',
       bgcolor:        'primary.lighter',
@@ -29,10 +32,31 @@ const history = useHistory()
     }}>
 
 
-      <h1> Login</h1>
 
-      <LoginForm textoBotao={textoBotao} setTexto={setTexto} />
-      <Button onClick={() => gotoCadastro(history)} variant='text'>Não possui conta? Cadastre-se</Button>
+
+    <Typography  color = "textPrimary" variant="h3"> Login </Typography>
+
+    <Box 
+    sx={{
+      border:         '1px solid black',
+      marginTop:      '2vh',
+      display:        'flex',
+      flexDirection:  'column',
+      height:         '40vh',
+      width:          '80vw',
+      maxWidth:       '750px',
+      justifyContent: 'center',
+      alignItems:     'center',
+      backgroundColor: 'white'
+      }}
+    >
+
+
+        <LoginForm textoBotao={textoBotao} setTexto={setTexto} />
+        <Button onClick={() => gotoCadastro(history)} variant='text'>Não possui conta? Cadastre-se</Button>
+      
+      </Box>
+
 
     </Box>
   );

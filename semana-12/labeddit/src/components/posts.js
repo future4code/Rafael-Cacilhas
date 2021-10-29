@@ -6,26 +6,28 @@ import CardActions       from '@mui/material/CardActions';
 import CardContent       from '@mui/material/CardContent';
 import ArrowDropUpIcon   from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Avatar            from '@mui/material/Avatar';
+
 
 import {useHistory}      from 'react-router-dom';
 import {gotoPost}        from '../router/coordinator';
-import useComent         from '../hooks/useComent';
 
 import {curtir}          from '../services/feed.js'
 import {descurtir}       from '../services/feed.js'
 
-import {useState}       from  'react';
+import {useState}        from  'react';
 
 
 const Posts = (props) => {
-    const   history   = useHistory()
-    let     nComent   = useComent(props.id)
-    nComent?    nComent = nComent.length    :   nComent=0
+    const   history         =   useHistory()
+    const   nComent         =   props.numeroC? props.numeroC:0
+    const   primeiraLetra   =   props.usuario? props.usuario.charAt(0).toUpperCase() : ''
+
 
     const [votoUser,setVoto]    = useState(props.votoUser?  props.votoUser:0)
     const [votoTotal,setTotal]  = useState(props.votoTotal? Number(props.votoTotal):0 )
 
-
+    const postEscolhido = props
 
     const   likePost = (id) => {
 
@@ -128,20 +130,47 @@ const Posts = (props) => {
 
 
     return (
-    <Box
-        sx={{
-            border: '1px solid black',
-            minWidth:  '45vh'
-        }}    
-    >
-        <CardContent>
-            <Typography variant="h5" component="div">
-                {props.titulo? props.titulo:''}
-            </Typography>
 
-            <Typography variant="body1">
-                {props.corpo}
-            </Typography>
+        <Box 
+        sx={{
+            border:         '1px solid black',
+            display:        'flex',
+            flexDirection:  'column',
+            height:         '25vh',
+            width:          '85vw',
+            maxWidth:       '800px',
+            justifyContent: 'center',
+            alignItems:     'flex-start',
+            backgroundColor: 'white',
+            marginBottom:   '1vh'
+            }}
+        >
+
+        <CardContent>
+
+            <Box>
+                <Box sx={{display:'flex'}}>
+
+                    <Avatar sx={{bgcolor: "#913129" }} >{primeiraLetra} </Avatar>
+                    <Box sx={{marginTop:'1vh', marginLeft:'1vw'}}>
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                            {props.usuario}
+                        </Typography>
+                    </Box>
+
+                </Box>
+            
+
+                <Typography variant="h5" component="div">
+                    {props.titulo? props.titulo:''}
+                </Typography>
+
+                <Typography variant="body1">
+                    {props.corpo}
+                </Typography>
+
+            </Box>
+
         </CardContent>
 
         <Box  
@@ -150,9 +179,22 @@ const Posts = (props) => {
                 justifyContent: 'space-around',
                 alignItens:     'center',
                 height:         '4vh',
+                width:          '75vw',
+                maxWidth:       '750px',
+
         }} >
 
-            <Box sx={{position: 'inherit',  height: '4vh', display:'flex',alignItens:'center',justifyContent:'center',marginRight:'-5vw',marginLeft:'-10px'}}>
+            <Box 
+                sx={{
+                    position: 'inherit',  
+                    height: '4vh', 
+                    display:'flex',
+                    alignItens:'center',
+                    justifyContent:'center',
+                    marginRight:'-5vw',
+                    marginLeft:'-10px',
+                    marginTop:      '0vh',
+                }}>
                 
                 <CardActions>
 
@@ -174,20 +216,23 @@ const Posts = (props) => {
 
             </Box>
 
-            <Box sx={{position: 'inherit', height: '4vh', display:'flex',alignItens:'center',justifyContent:'center'}}>
+            <Box 
+                sx={{
+                    position: 'inherit', 
+                    height: '4vh', 
+                    display:'flex',
+                    alignItens:'center',
+                    justifyContent:'center',
+                    marginTop:      '1vh',
+                    }}>
 
                 <CardActions>
-                    <Button onClick = {  () => gotoPost(history,props.id)    }  size="small" variant='text'> {nComent}  Comentários    </Button>
+                    <Button onClick = {  () => gotoPost(history,postEscolhido)    }  size="small" variant='text'> {nComent}  Comentários    </Button>
                 </CardActions>
 
             </Box>
 
-            <Box sx={{position: 'inherit', height: '4vh', display:'flex',alignItens:'center',justifyContent:'center'}}>
 
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        {props.usuario}
-                </Typography>
-            </Box>
 
         </Box>
 

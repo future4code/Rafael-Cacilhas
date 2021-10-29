@@ -10,6 +10,6 @@ export const gotoFeed = (history) => {
     history.push('/')
 }
 
-export const gotoPost = (history,id) => {
-    history.push(`/post/${id}`)
+export const gotoPost = (history,postEscolhido) => {
+    history.push(`/post/${postEscolhido.id}`)
 }
