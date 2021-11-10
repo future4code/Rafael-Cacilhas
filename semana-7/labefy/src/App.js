@@ -1,71 +1,64 @@
 import axios from "axios";
 import React from "react";
+import styled from "styled-components";
+import Header from "./Components/Header/index"
+import PlaylistCreationPage from "./Components/PlaylistCreationPage/index";
+import PlaylistManagerPage from "./Components/PlaylistManagerPage/index";
+
+
+
+const AppContainer = styled.div`
+  width:          95vw;
+  height:         100vh;
+  display:        flex;
+  flex-direction: column;
+  background-color: lightgreen;
+
+`
 
 export default class  App extends React.Component{
 
   state = {
     inputValue: '',
-    playlistName: ""
+    playlistName: "",
+    playlists: [],
+    currentPage: "playlistCreationPage",
   }
 
-
-
-  criaPlaylist = () => {
-
-    const headers = {
-      headers: {
-        Authorization: "rafael-cacilhas-maryam"
-      }
-    };
-
-    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
-
-    const body = 
-    {
-      name: this.state.inputValue
-    };
-    
-
-    axios.post(url,body,headers)
-      .then(  (res) =>{
-        console.log(res.data)
-      })
-      .catch( (err) => {
-        console.log(err.response.data.message)
-      })
-
-
+  changePage = (atual) => {
+    this.setState({
+      currentPage: atual
+    })
   }
 
-
-  
-
-
-
-
-  mudaInput = (event) => {
-    this.setState({ inputValue: event.target.value  });
-  };
 
 
   render(){
 
-    return (
-      <div className="App">
-        <h1> Labefy </h1>
+    const currentPage = () => {
+      if(this.state.currentPage === "playlistCreationPage"){
+        return <PlaylistCreationPage />
+      } 
+      else if(this.state.currentPage === "playlistManagerPage"){
+        return <PlaylistManagerPage />
+      }
+    }
 
-        <input
-          placeholder="Nome playlist"
-          value={this.state.inputValue}
-          onChange={this.mudaInput}
+    let lista = this.state.playlists.map ((item) => {
+      return <li key={item.id}> {item.name}  <button onClick={  this.removePlaylist( item.id )    }  >x</button></li>
+    });
+
+
+    return (
+      <div>
+        <Header 
+        changePage = {this.changePage}
         />
 
-
-        <button onClick={this.criaPlaylist} >Criar</button>
-
-
+        {currentPage()}        
 
       </div>
+
     );
   }
 }
