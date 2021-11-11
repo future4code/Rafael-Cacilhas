@@ -1,0 +1,8 @@
+export const primaryColor       = '#5e1b15'
+export const secondaryColor     = '#1b7a89'
+export const neutralColor       = '#ffdfc6'
+export const backgroundLight    = '#ffffff'
+export const backgroundLighter  = 'rgba(255, 255, 255, 0.7)'
+export const backgroundDark     = '#eeeeee'
+export const backgroundDarker   = '#303030'
+export const success            = '#27b2cd'

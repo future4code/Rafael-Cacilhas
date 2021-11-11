@@ -5,11 +5,7 @@ import {useHistory} from "react-router-dom";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Alert from '@mui/material/Alert';
 
-import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-import Input from '@mui/material/Input';
 
 
 
@@ -99,6 +95,7 @@ export default function Login() {
                     <Typography  variant="h7" component="div" >
                         E-mail 
                     </Typography>
+                    
                     <input 
                     placeholder="email"
                     value={email}

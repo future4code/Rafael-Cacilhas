@@ -8,12 +8,8 @@ import AdminHomePage        from "./Paginas/AdminHomePage";
 import HomePage             from "./Paginas/HomePage";
 import ListTripsPage        from "./Paginas/ListTripsPage";
 import Login                from "./Paginas/Login"
-
-/*
-import ApplicationFormPage  from "./Paginas/ApplicationFormPage";
 import CreateTripPage       from "./Paginas/CreateTripPage";
-import TripDetailsPage      from "./Paginas/TripDetailsPage";
-*/
+
 export default function Rotas() {
 
     return (
@@ -28,6 +24,10 @@ export default function Rotas() {
 
                 <Route exact path={"/admin"}>
                     <AdminHomePage />
+                </Route>
+
+                <Route exact path={"/criar"}>
+                    <CreateTripPage />
                 </Route>
 
                 <Route exact path={"/viagens"}>
