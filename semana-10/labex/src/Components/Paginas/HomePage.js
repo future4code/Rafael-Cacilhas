@@ -15,7 +15,7 @@ const Img = styled.img`
     transform: rotate(-45deg);
     display: inline;
 
-    max-width: 100vw;
+    max-width: 90vw;
     
 
     position: absolute;
@@ -89,14 +89,6 @@ position:               absolute;
 export default function HomePage() {
 
     const history = useHistory()
-
-    const gotoHome = () => {
-        history.push("/")
-    }
-
-    const gotoAdmin = () => {
-        history.push("/admin")
-    }
 
     const gotoViagens = () => {
         history.push("/viagens")
